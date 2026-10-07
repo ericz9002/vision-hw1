@@ -9,8 +9,14 @@ float get_pixel(image im, int x, int y, int c)
     if(x > im.w - 1){
         x = im.w - 1;
     }
+    else if(x < 0){
+        x = 0;
+    }
     if(y > im.h - 1){
         y = im.h - 1;
+    }
+    else if(y < 0){
+        y = 0;
     }
     int index = im.w * im.h * c + im.w * y + x;
     return im.data[index];
